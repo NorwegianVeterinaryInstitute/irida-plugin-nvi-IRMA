@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iridaWorkflow>
+  <id>018b3a06-a533-4f94-9849-a5e02af2c169</id>
+  <name>IRMA</name>
+  <version>1.2.0</version>
+  <analysisType>IRMA</analysisType>
+  <inputs>
+    <sequenceReadsPaired>sequence_reads_pair</sequenceReadsPaired>
+    <requiresSingleSample>true</requiresSingleSample>
+  </inputs>
+  <parameters>
+    <parameter name="irma-1-module" defaultValue="FLU">
+      <toolParameter toolId="cd01c298-63e3-4169-a6fe-ade229daa467" parameterName="module"/>
+    </parameter>
+  </parameters>
+  <outputs>
+    <output name="ConsSeq-NS" fileName="ConsSeq-NS"/>
+    <output name="ConsSeq-PB1.fasta" fileName="ConsSeq-PB1.fasta"/>
+    <output name="ConsSeq-MP" fileName="ConsSeq-MP"/>
+    <output name="ConsSeq-NA" fileName="ConsSeq-NA"/>
+    <output name="ConsSeq-PA" fileName="ConsSeq-PA"/>
+    <output name="ConsSeq-HA" fileName="ConsSeq-HA"/>
+    <output name="ConsSeq-PB2" fileName="ConsSeq-PB2"/>
+    <output name="ConsSeq-NP" fileName="ConsSeq-NP"/>
+    <output name="BAM-PA" fileName="BAM-PA"/>
+    <output name="BAM-NS" fileName="BAM-NS"/>
+    <output name="BAM-HA" fileName="BAM-HA"/>
+    <output name="BAM-MP" fileName="BAM-MP"/>
+    <output name="BAM-NA" fileName="BAM-NA"/>
+    <output name="BAM-PB1" fileName="BAM-PB1"/>
+    <output name="BAM-PB2" fileName="BAM-PB2"/>
+    <output name="BAM-NP" fileName="BAM-NP"/>
+    <output name="VCF-PB2" fileName="VCF-PB2"/>
+    <output name="VCF-NA" fileName="VCF-NA"/>
+    <output name="VCF-NS" fileName="VCF-NS"/>
+    <output name="VCF-MP" fileName="VCF-MP"/>
+    <output name="VCF-PB1" fileName="VCF-PB1"/>
+    <output name="VCF-NP" fileName="VCF-NP"/>
+    <output name="VCF-HA" fileName="VCF-HA"/>
+    <output name="VCF-PA" fileName="VCF-PA"/>
+  </outputs>
+  <toolRepositories/>
+</iridaWorkflow>

@@ -1,0 +1,32 @@
+
+
+Download galaxy_workflow into "/Users/jeevka/IRIDA_Plugins/"
+cd /Users/jeevka/IRIDA_Plugins/
+java -jar irida-wf-ga2xml-1.2.1-standalone.jar -n IRMA -t IRMA -W 1.2.0 -o output -i IRMA1p2.ga
+mkdir irida/irida-plugin-nvi-irma_1.2.0
+cp -r irida/irida-plugin-nvi-respointfinder_4.4.2/* irida/irida-plugin-nvi-irma_1.2.0/
+
+cp output/IRMA/1.2.0/* irida/irida-plugin-nvi-irma_1.2.0/src/main/resources/workflows/3.0.0/
+mv 3.0.0/ 1.2.0
+cd irida/irida-plugin-nvi-irma_1.2.0/src/main/resources/workflows/
+cd irida/irida-plugin-nvi-irma_1.2.0/src/java/ca/corefacility/bioinformatics/irida/plugins/
+mv ResPointFinderPlugin.java  IrmaPlugin.java
+rm ResPointFinderPluginUpdater.java
+
+
+Modify 
+1. pom.xml
+2. XML file in irida/irida-plugin-nvi-respointfinder_4.4.2/src/main/resources/workflows/3.0.0/
+3. Modify the messages file in irida/irida-plugin-nvi-respointfinder_4.4.2/src/main/resources/workflows/3.0.0/
+4. Modify the Java files in 
+
+Build: 
+mvn clean package
+
+scp target/ResPointFinder3-3.0.0.jar centos@irida.vigasp.vetinst.no:/home/centos/
+cp /home/centos/ResPointFinder3-3.0.0.jar /etc/irida/plugins/
+
+systemctl stop tomcat-9.0.43.service
+
+
+

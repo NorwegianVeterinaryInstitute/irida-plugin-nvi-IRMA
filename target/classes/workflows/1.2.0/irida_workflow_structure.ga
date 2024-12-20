@@ -1,0 +1,563 @@
+{
+  "a_galaxy_workflow" : "true",
+  "annotation" : "",
+  "format-version" : "0.1",
+  "name" : "IRMA",
+  "steps" : {
+    "0" : {
+      "workflow_outputs" : [ ],
+      "input_connections" : { },
+      "label" : "sequence_reads_pair",
+      "id" : 0,
+      "tool_state" : "{\"optional\": false, \"tag\": \"\", \"collection_type\": \"list:paired\"}",
+      "errors" : null,
+      "position" : {
+        "left" : 0.0,
+        "top" : 67.98437468283956
+      },
+      "name" : "Input dataset collection",
+      "uuid" : "086f436a-435a-43f5-8c59-d9b3c2b4bc2b",
+      "outputs" : [ ],
+      "type" : "data_collection_input",
+      "tool_version" : null,
+      "annotation" : "",
+      "inputs" : [ {
+        "description" : "",
+        "name" : "sequence_reads_pair"
+      } ],
+      "content_id" : null,
+      "tool_id" : null
+    },
+    "1" : {
+      "workflow_outputs" : [ {
+        "label" : "PB1",
+        "output_name" : "Consensus Sequences-PB1",
+        "uuid" : "4b19d5d6-0724-41ce-b4fc-fd5b5f01c404"
+      }, {
+        "label" : "PB2",
+        "output_name" : "Consensus Sequences-PB2",
+        "uuid" : "422b694c-4fe1-4cdb-9737-093594b68bcc"
+      }, {
+        "label" : "PA",
+        "output_name" : "Consensus Sequences-PA",
+        "uuid" : "ca024da1-b636-4dd9-81f2-867ee1b6f40f"
+      }, {
+        "label" : "HA",
+        "output_name" : "Consensus Sequences-HA",
+        "uuid" : "c5b1d32e-d3bd-4d8d-8d45-872f188dbb1e"
+      }, {
+        "label" : "NP",
+        "output_name" : "Consensus Sequences-NP",
+        "uuid" : "a15967d7-38cb-4922-bb18-1e387570b09c"
+      }, {
+        "label" : "NA",
+        "output_name" : "Consensus Sequences-NA",
+        "uuid" : "6932c19a-22e9-4f42-ba68-f57ab207c723"
+      }, {
+        "label" : "MP",
+        "output_name" : "Consensus Sequences-MP",
+        "uuid" : "04ce3f7e-4383-4ce3-85e1-dc2c3fb19d90"
+      }, {
+        "label" : "NS",
+        "output_name" : "Consensus Sequences-NS",
+        "uuid" : "5ad28114-e2a7-4b8c-b1de-c0e10f88e768"
+      }, {
+        "label" : null,
+        "output_name" : "BAM-PB1",
+        "uuid" : "711bb73e-f6ae-4dc1-8089-0e18feb3f614"
+      }, {
+        "label" : null,
+        "output_name" : "BAM-PB2",
+        "uuid" : "4eb029b2-c111-498d-8c18-fa190596dd65"
+      }, {
+        "label" : null,
+        "output_name" : "BAM-PA",
+        "uuid" : "796d7933-acc5-4023-97bf-443494fc645e"
+      }, {
+        "label" : null,
+        "output_name" : "BAM-HA",
+        "uuid" : "8e47afc7-7ba5-4439-8406-d18c4fee32c7"
+      }, {
+        "label" : null,
+        "output_name" : "BAM-NP",
+        "uuid" : "de6b4b95-ada8-49a1-b6fd-ae02ddcd5aed"
+      }, {
+        "label" : null,
+        "output_name" : "BAM-NA",
+        "uuid" : "43545320-188b-4f10-8f5b-4129231715b9"
+      }, {
+        "label" : null,
+        "output_name" : "BAM-MP",
+        "uuid" : "6bf11df3-5ea9-4a3d-a082-bec95598e038"
+      }, {
+        "label" : null,
+        "output_name" : "BAM-NS",
+        "uuid" : "ad662a99-9517-4aba-8448-18c53dc5ac01"
+      }, {
+        "label" : null,
+        "output_name" : "VCF-PB1",
+        "uuid" : "4977ec52-ef59-4f4c-a941-18c52fccd828"
+      }, {
+        "label" : null,
+        "output_name" : "VCF-PB2",
+        "uuid" : "1a4f25b9-a08e-4766-8c65-4a8300619f28"
+      }, {
+        "label" : null,
+        "output_name" : "VCF-PA",
+        "uuid" : "d297d21c-e58e-4860-bcc5-fe7b089fe809"
+      }, {
+        "label" : null,
+        "output_name" : "VCF-HA",
+        "uuid" : "1f80434e-4e2c-4130-8cc0-38a69f7034b1"
+      }, {
+        "label" : null,
+        "output_name" : "VCF-NP",
+        "uuid" : "16ea694b-4214-4dc7-b620-089e8750ef2c"
+      }, {
+        "label" : null,
+        "output_name" : "VCF-NA",
+        "uuid" : "6e31c654-d198-4446-a7dd-e9ea9c30aadc"
+      }, {
+        "label" : null,
+        "output_name" : "VCF-MP",
+        "uuid" : "4059e5fe-12e8-42be-b72e-a87489c11910"
+      }, {
+        "label" : null,
+        "output_name" : "VCF-NS",
+        "uuid" : "49564815-cdc6-4a58-baaf-ed0a625171eb"
+      } ],
+      "input_connections" : {
+        "input_type" : {
+          "id" : 0,
+          "output_name" : "output"
+        }
+      },
+      "label" : null,
+      "id" : 1,
+      "tool_state" : "{\"input_type\": {\"__class__\": \"RuntimeValue\"}, \"module\": \"FLU\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+      "errors" : null,
+      "position" : {
+        "left" : 328.9375016311109,
+        "top" : 0.0
+      },
+      "name" : "IRMA",
+      "uuid" : "cd01c298-63e3-4169-a6fe-ade229daa467",
+      "outputs" : [ {
+        "name" : "Consensus Sequences-PB1",
+        "type" : "fasta"
+      }, {
+        "name" : "Consensus Sequences-PB2",
+        "type" : "fasta"
+      }, {
+        "name" : "Consensus Sequences-PA",
+        "type" : "fasta"
+      }, {
+        "name" : "Consensus Sequences-HA",
+        "type" : "fasta"
+      }, {
+        "name" : "Consensus Sequences-NP",
+        "type" : "fasta"
+      }, {
+        "name" : "Consensus Sequences-NA",
+        "type" : "fasta"
+      }, {
+        "name" : "Consensus Sequences-MP",
+        "type" : "fasta"
+      }, {
+        "name" : "Consensus Sequences-NS",
+        "type" : "fasta"
+      }, {
+        "name" : "BAM-PB1",
+        "type" : "bam"
+      }, {
+        "name" : "BAM-PB2",
+        "type" : "bam"
+      }, {
+        "name" : "BAM-PA",
+        "type" : "bam"
+      }, {
+        "name" : "BAM-HA",
+        "type" : "bam"
+      }, {
+        "name" : "BAM-NP",
+        "type" : "bam"
+      }, {
+        "name" : "BAM-NA",
+        "type" : "bam"
+      }, {
+        "name" : "BAM-MP",
+        "type" : "bam"
+      }, {
+        "name" : "BAM-NS",
+        "type" : "bam"
+      }, {
+        "name" : "VCF-PB1",
+        "type" : "vcf"
+      }, {
+        "name" : "VCF-PB2",
+        "type" : "vcf"
+      }, {
+        "name" : "VCF-PA",
+        "type" : "vcf"
+      }, {
+        "name" : "VCF-HA",
+        "type" : "vcf"
+      }, {
+        "name" : "VCF-NP",
+        "type" : "vcf"
+      }, {
+        "name" : "VCF-NA",
+        "type" : "vcf"
+      }, {
+        "name" : "VCF-MP",
+        "type" : "vcf"
+      }, {
+        "name" : "VCF-NS",
+        "type" : "vcf"
+      } ],
+      "type" : "tool",
+      "tool_version" : "1.2.0+galaxy1",
+      "annotation" : "",
+      "inputs" : [ {
+        "description" : "runtime parameter for tool IRMA",
+        "name" : "input_type"
+      } ],
+      "post_job_actions" : {
+        "RenameDatasetActionConsensus Sequences-NS" : {
+          "action_arguments" : {
+            "newname" : "ConsSeq-NS"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "Consensus Sequences-NS"
+        },
+        "RenameDatasetActionBAM-PA" : {
+          "action_arguments" : {
+            "newname" : "BAM-PA"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "BAM-PA"
+        },
+        "RenameDatasetActionVCF-PB2" : {
+          "action_arguments" : {
+            "newname" : "VCF-PB2"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "VCF-PB2"
+        },
+        "ChangeDatatypeActionConsensus Sequences-MP" : {
+          "action_arguments" : {
+            "newtype" : "fasta"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "Consensus Sequences-MP"
+        },
+        "RenameDatasetActionConsensus Sequences-PB1" : {
+          "action_arguments" : {
+            "newname" : "ConsSeq-PB1.fasta"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "Consensus Sequences-PB1"
+        },
+        "ChangeDatatypeActionBAM-PB2" : {
+          "action_arguments" : {
+            "newtype" : "bam"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "BAM-PB2"
+        },
+        "RenameDatasetActionBAM-NS" : {
+          "action_arguments" : {
+            "newname" : "BAM-NS"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "BAM-NS"
+        },
+        "ChangeDatatypeActionBAM-NP" : {
+          "action_arguments" : {
+            "newtype" : "bam"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "BAM-NP"
+        },
+        "ChangeDatatypeActionConsensus Sequences-HA" : {
+          "action_arguments" : {
+            "newtype" : "fasta"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "Consensus Sequences-HA"
+        },
+        "RenameDatasetActionConsensus Sequences-MP" : {
+          "action_arguments" : {
+            "newname" : "ConsSeq-MP"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "Consensus Sequences-MP"
+        },
+        "RenameDatasetActionVCF-NA" : {
+          "action_arguments" : {
+            "newname" : "VCF-NA"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "VCF-NA"
+        },
+        "ChangeDatatypeActionConsensus Sequences-NA" : {
+          "action_arguments" : {
+            "newtype" : "fasta"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "Consensus Sequences-NA"
+        },
+        "ChangeDatatypeActionBAM-NA" : {
+          "action_arguments" : {
+            "newtype" : "bam"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "BAM-NA"
+        },
+        "RenameDatasetActionBAM-HA" : {
+          "action_arguments" : {
+            "newname" : "BAM-HA"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "BAM-HA"
+        },
+        "ChangeDatatypeActionConsensus Sequences-NS" : {
+          "action_arguments" : {
+            "newtype" : "fasta"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "Consensus Sequences-NS"
+        },
+        "ChangeDatatypeActionConsensus Sequences-NP" : {
+          "action_arguments" : {
+            "newtype" : "fasta"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "Consensus Sequences-NP"
+        },
+        "ChangeDatatypeActionVCF-NP" : {
+          "action_arguments" : {
+            "newtype" : "vcf"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "VCF-NP"
+        },
+        "ChangeDatatypeActionBAM-NS" : {
+          "action_arguments" : {
+            "newtype" : "bam"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "BAM-NS"
+        },
+        "ChangeDatatypeActionVCF-NS" : {
+          "action_arguments" : {
+            "newtype" : "vcf"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "VCF-NS"
+        },
+        "ChangeDatatypeActionVCF-HA" : {
+          "action_arguments" : {
+            "newtype" : "vcf"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "VCF-HA"
+        },
+        "ChangeDatatypeActionConsensus Sequences-PB2" : {
+          "action_arguments" : {
+            "newtype" : "fasta"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "Consensus Sequences-PB2"
+        },
+        "RenameDatasetActionVCF-NS" : {
+          "action_arguments" : {
+            "newname" : "VCF-NS"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "VCF-NS"
+        },
+        "RenameDatasetActionVCF-MP" : {
+          "action_arguments" : {
+            "newname" : "VCF-MP"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "VCF-MP"
+        },
+        "RenameDatasetActionBAM-MP" : {
+          "action_arguments" : {
+            "newname" : "BAM-MP"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "BAM-MP"
+        },
+        "RenameDatasetActionConsensus Sequences-NA" : {
+          "action_arguments" : {
+            "newname" : "ConsSeq-NA"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "Consensus Sequences-NA"
+        },
+        "ChangeDatatypeActionBAM-HA" : {
+          "action_arguments" : {
+            "newtype" : "bam"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "BAM-HA"
+        },
+        "RenameDatasetActionVCF-PB1" : {
+          "action_arguments" : {
+            "newname" : "VCF-PB1"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "VCF-PB1"
+        },
+        "RenameDatasetActionConsensus Sequences-PA" : {
+          "action_arguments" : {
+            "newname" : "ConsSeq-PA"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "Consensus Sequences-PA"
+        },
+        "ChangeDatatypeActionVCF-NA" : {
+          "action_arguments" : {
+            "newtype" : "vcf"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "VCF-NA"
+        },
+        "ChangeDatatypeActionBAM-PA" : {
+          "action_arguments" : {
+            "newtype" : "bam"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "BAM-PA"
+        },
+        "ChangeDatatypeActionBAM-PB1" : {
+          "action_arguments" : {
+            "newtype" : "bam"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "BAM-PB1"
+        },
+        "RenameDatasetActionConsensus Sequences-HA" : {
+          "action_arguments" : {
+            "newname" : "ConsSeq-HA"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "Consensus Sequences-HA"
+        },
+        "RenameDatasetActionConsensus Sequences-PB2" : {
+          "action_arguments" : {
+            "newname" : "ConsSeq-PB2"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "Consensus Sequences-PB2"
+        },
+        "RenameDatasetActionBAM-NA" : {
+          "action_arguments" : {
+            "newname" : "BAM-NA"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "BAM-NA"
+        },
+        "RenameDatasetActionBAM-PB1" : {
+          "action_arguments" : {
+            "newname" : "BAM-PB1"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "BAM-PB1"
+        },
+        "RenameDatasetActionVCF-NP" : {
+          "action_arguments" : {
+            "newname" : "VCF-NP"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "VCF-NP"
+        },
+        "RenameDatasetActionBAM-PB2" : {
+          "action_arguments" : {
+            "newname" : "BAM-PB2"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "BAM-PB2"
+        },
+        "RenameDatasetActionConsensus Sequences-NP" : {
+          "action_arguments" : {
+            "newname" : "ConsSeq-NP"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "Consensus Sequences-NP"
+        },
+        "ChangeDatatypeActionBAM-MP" : {
+          "action_arguments" : {
+            "newtype" : "bam"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "BAM-MP"
+        },
+        "RenameDatasetActionBAM-NP" : {
+          "action_arguments" : {
+            "newname" : "BAM-NP"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "BAM-NP"
+        },
+        "ChangeDatatypeActionVCF-PB2" : {
+          "action_arguments" : {
+            "newtype" : "vcf"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "VCF-PB2"
+        },
+        "ChangeDatatypeActionConsensus Sequences-PA" : {
+          "action_arguments" : {
+            "newtype" : "fasta"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "Consensus Sequences-PA"
+        },
+        "ChangeDatatypeActionConsensus Sequences-PB1" : {
+          "action_arguments" : {
+            "newtype" : "fasta"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "Consensus Sequences-PB1"
+        },
+        "ChangeDatatypeActionVCF-MP" : {
+          "action_arguments" : {
+            "newtype" : "vcf"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "VCF-MP"
+        },
+        "RenameDatasetActionVCF-HA" : {
+          "action_arguments" : {
+            "newname" : "VCF-HA"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "VCF-HA"
+        },
+        "ChangeDatatypeActionVCF-PB1" : {
+          "action_arguments" : {
+            "newtype" : "vcf"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "VCF-PB1"
+        },
+        "RenameDatasetActionVCF-PA" : {
+          "action_arguments" : {
+            "newname" : "VCF-PA"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "VCF-PA"
+        }
+      },
+      "content_id" : "irma",
+      "tool_id" : "irma"
+    }
+  },
+  "tags" : [ ],
+  "uuid" : "4f1ed88f-522d-4c5b-864e-b5bf2eec9092",
+  "version" : 8
+}
