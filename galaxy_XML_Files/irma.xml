@@ -1,0 +1,65 @@
+<tool id="irma" name="IRMA" version="1.2.0+galaxy1" >
+    <description>
+        Construct robust assemblies of highly variable RNA viruses
+    </description>
+
+    <!--macros>
+         <import>macros.xml</import>
+    </macros-->
+
+    <requirements>
+        <requirement type="package" version="1.2.0">irma</requirement>
+        <requirement type="package" version="3.12">python</requirement>
+    </requirements>
+
+    <command>
+        <![CDATA[
+        irma $module $input_type.forward $input_type.reverse resultDir 2>Err_1.out
+        && python3 '$__tool_directory__/createMissingFiles.py' 2>Err_2.out
+        ]]>
+    </command>
+
+    <inputs>
+        <param format="fastq,fastq.gz" name="input_type" type="data_collection" collection_type="paired" label="Paired-end FASTQ collection" />
+        <param name="module" type="select" label="Select analysis module">
+            <option value="FLU" selected="true">FLU</option>
+            <option value="FLU-utr">FLU-utr</option>
+            <option value="FLU-pacbio">FLU-pacbio</option>
+        </param>
+    </inputs>
+
+    <outputs>
+            <data name="Consensus Sequences-PB1" format="fasta" from_work_dir="resultDir/A_PB1.fasta" label="ConsSeq-PB1"/>
+            <data name="Consensus Sequences-PB2" format="fasta" from_work_dir="resultDir/A_PB2.fasta" label="ConsSeq-PB2"/>
+            <data name="Consensus Sequences-PA" format="fasta" from_work_dir="resultDir/A_PA.fasta" label="ConsSeq-PA"/>
+            <data name="Consensus Sequences-HA" format="fasta" from_work_dir="resultDir/A_HA.fasta" label="ConsSeq-HA"/>
+            <data name="Consensus Sequences-NP" format="fasta" from_work_dir="resultDir/A_NP.fasta" label="ConsSeq-NP"/>
+            <data name="Consensus Sequences-NA" format="fasta" from_work_dir="resultDir/A_NA.fasta" label="ConsSeq-NA"/>
+            <data name="Consensus Sequences-MP" format="fasta" from_work_dir="resultDir/A_MP.fasta" label="ConsSeq-MP"/>
+            <data name="Consensus Sequences-NS" format="fasta" from_work_dir="resultDir/A_NS.fasta" label="ConsSeq-NS"/>
+        
+            <data name="BAM-PB1" format="bam" from_work_dir="resultDir/A_PB1.bam" label="BAM-PB1"/>
+            <data name="BAM-PB2" format="bam" from_work_dir="resultDir/A_PB2.bam" label="BAM-PB2"/>
+            <data name="BAM-PA" format="bam" from_work_dir="resultDir/A_PA.bam" label="BAM-PA"/>
+            <data name="BAM-HA" format="bam" from_work_dir="resultDir/A_HA.bam" label="BAM-HA"/>
+            <data name="BAM-NP" format="bam" from_work_dir="resultDir/A_NP.bam" label="BAM-NP"/>
+            <data name="BAM-NA" format="bam" from_work_dir="resultDir/A_NA.bam" label="BAM-NA"/>
+            <data name="BAM-MP" format="bam" from_work_dir="resultDir/A_MP.bam" label="BAM-MP"/>
+            <data name="BAM-NS" format="bam" from_work_dir="resultDir/A_NS.bam" label="BAM-NS"/>
+       
+            <data name="VCF-PB1" format="vcf" from_work_dir="resultDir/A_PB1.vcf" label="VCF-PB1"/>
+            <data name="VCF-PB2" format="vcf" from_work_dir="resultDir/A_PB2.vcf" label="VCF-PB2"/>
+            <data name="VCF-PA" format="vcf" from_work_dir="resultDir/A_PA.vcf" label="VCF-PA"/>
+            <data name="VCF-HA" format="vcf" from_work_dir="resultDir/A_HA.vcf" label="VCF-HA"/>
+            <data name="VCF-NP" format="vcf" from_work_dir="resultDir/A_NP.vcf" label="VCF-NP"/>
+            <data name="VCF-NA" format="vcf" from_work_dir="resultDir/A_NA.vcf" label="VCF-NA"/>
+            <data name="VCF-MP" format="vcf" from_work_dir="resultDir/A_MP.vcf" label="VCF-MP"/>
+            <data name="VCF-NS" format="vcf" from_work_dir="resultDir/A_NS.vcf" label="VCF-NS"/>
+    </outputs>
+
+<help>
+</help>
+    <citations>
+        <citation type="doi">10.1186/s12864-016-3030-6</citation>
+    </citations>
+</tool>
