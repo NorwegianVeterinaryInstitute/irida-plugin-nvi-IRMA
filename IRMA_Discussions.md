@@ -29,7 +29,7 @@ Get about 10 smaples (woth good/ok/bad variations) from cathrine and run in comm
 ## Updated configs: 
 The final params/config looks like this. 
  
- 
+``` 
 DEL_TYPE=DEL
 MIN_CONS_SUPPORT=10
 MIN_CONS_SUPPORT=10
@@ -37,7 +37,6 @@ MIN_CONS_QUALITY=10
  
 GRID_ON=0 #off
 
-```
 ### REFERENCE ###
 SKIP_E=0        # skip reference elongation
  
