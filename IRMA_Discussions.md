@@ -53,11 +53,25 @@ MIN_CONS_SUPPORT=10 # Minimum allele coverage depth to call plurality consensus 
 MIN_CONS_QUALITY=10 # Minimum allele average quality to call plurality consensus, otherwise calls "N". Setting this value too high can negatively impact final amended consensus.
  
 GRID_ON=0 #off
+# READ Gathering (defaults)
+USE_MEDIAN=1
+QUAL_THRESOLD=30
+MIN_LEN=125
+
+# TO VERIFY IN OUTOUT config and see if need to change !  This appears to be carried from base module 
+# MIN_RP=1		# minimum read pattern count to continue doing primary assembly
+# MIN_RC=1		# minimum read count to continue doing primary assembly
+# MIN_AQ default is 2 in the reference, but the paper gives 24 for variant calls, which matches our config. 
+
+
+ASSEM_REF=1 #
+ALIGN_AMENDED=1 #
+
 PADDED_CONSENSUS=0 # We don't want N-padding of dropout regions — We prefer it stays deletions ## IMPORTANT
 DO_SECONDARY=0 # OFF First assembly we do not do secondary assembly - BUT we do coinfection detection
 
 ### REFERENCE ###
-SKIP_E=0        # 	Skip reference elongation/extension at the 5′ and 3′ ends. Used during read gathering phase. Avoid extending at edges (usually low coverage anyway). 
+SKIP_E=1     # 	1 = Skip reference elongation/extension at the 5′ and 3′ ends. Used during read gathering phase. Avoid extending at edges (usually low coverage anyway). 
 
 ### At first do not do secondary assembly BUT do admxiture testing ###
 
