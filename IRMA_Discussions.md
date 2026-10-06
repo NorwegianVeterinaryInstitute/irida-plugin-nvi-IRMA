@@ -33,27 +33,10 @@ The final params/config looks like this.
 1. One for the default settings - which also detect eventual admixture but does not reconstruct the possible genome of the co-infection.
     - We had agreed about a min coverage of 10 to indicate the presence of a sequence (by mapping to reference) - this is a strict minimum - BUT we might want to adjust depending on expected/aimed coverage that Cathrine is aiming for.  	
 2. One when admixture is detected - we will need to fetch the coverage and compute appropriate ratio for the secondary assembly (Cathrine wanted that) - unless we find a good solution to do it - it will have to wait
- 
-``` 
-DEL_TYPE=DEL
-MIN_CONS_SUPPORT=10
-MIN_CONS_QUALITY=10
- 
-GRID_ON=0 #off
 
-### REFERENCE ###
-SKIP_E=0        # skip reference elongation
- 
-### Does secondary assembly for admxiture testing ###
-RESIDUAL_ASSEMBLY_FACTOR=400 # integer  Assembles secondary data if observed factor is less than integer RESIDUAL_ASSEMBLY_FACTOR. Leave 0 for off.
-MIN_RP_RESIDUAL=150 # ≥ 1   Minimum number of read patterns to continue to attempt residual assembly per gene segment.
-MIN_RC_RESIDUAL=150 # ≥ 1   Minimum read count to continue to attempt residual assembly per gene segment.
-DO_SECONDARY=1  # 0, 1  off, on Given a successful residual assembly, create a patchwork consensus and run a secondary assembly
-``` 
  
  
- 
-### THE COMMANDS: 
+### THE COMMANDS / configurations files: 
 
 #### Default command
 AIM: standard default assembly (first assembly) - assuming no coinfection (but detection of coinfection activated
@@ -61,16 +44,25 @@ AIM: standard default assembly (first assembly) - assuming no coinfection (but d
 ```
 irma FLU Test_Data/250918_M09180.2025-04-21457-1-4_S5_R1_001.fastq Test_Data/250918_M09180.2025-04-21457-1-4_S5_R2_001.fastq output_2 --external-config userconfig/local_config.sh
 ```
-- default configuration file
-- 
+- default configuration file (input config)
 
-#### Secondary assembly when co-infection detected
-- TBA
-- Specific configuration file
+```bash
+# options we need to ensure
+DEL_TYPE=DEL # No reference-fill on missing sites — matches "no reference bleed" requirement.
+MIN_CONS_SUPPORT=10 # Minimum allele coverage depth to call plurality consensus (avoid reference bleed), otherwise calls "N". Setting this value too high can negatively impact final amended consensus.
+MIN_CONS_QUALITY=10 # Minimum allele average quality to call plurality consensus, otherwise calls "N". Setting this value too high can negatively impact final amended consensus.
+ 
+GRID_ON=0 #off
 
+### REFERENCE ###
+SKIP_E=0        # 	Skip reference elongation/extension at the 5′ and 3′ ends. Used during read gathering phase. Avoid extending at edges (usually low coverage anyway). 
 
-### Configuration files 
-#### Default - FLU-output.sh
+### At first do not do secondary assembly BUT do admxiture testing ###
+
+``` 
+ 
+
+- default output configuration should read as: FLU-output.sh
 ```
 ### BACKGROUND INFO ###
 # Iterative Refinement Meta-Assembler (IRMA), v1.2.0, 23 Aug 2024
@@ -180,3 +172,33 @@ MIN_CONF=0.80		# minimum confidence not machine error
 # CONFIDENCE INTERVALS
 SIG_LEVEL=0.999		# significance test level for variant calling (.90,.95,.99,.999). 
 ```
+
+#### Secondary assembly when co-infection detected
+- TBA
+- Specific configuration file
+
+- input command to change / verify
+```bash
+# changed options
+DO_SECONDARY=1
+
+# Options that needs to be evaluated and further adapted
+RESIDUAL_ASSEMBLY_FACTOR=1000	# PLACEHOLDER: permissive/high so it rarely blocks detection on its own —
+				# specificity is meant to come from MIN_RP_RESIDUAL/MIN_RC_RESIDUAL below.
+				# Report's own tested value (400) was calibrated to one specific sample — do not
+				# reuse as a general default. Needs to become a pipeline-adjustable parameter.
+MIN_RP_RESIDUAL=150	# stock default — report says IRMA authors recommend raising this, no target given yet
+MIN_RC_RESIDUAL=150	
+
+# NOTE : This are I think the default settings 
+RESIDUAL_ASSEMBLY_FACTOR=400 # integer  Assembles secondary data if observed factor is less than integer RESIDUAL_ASSEMBLY_FACTOR. Leave 0 for off.
+MIN_RP_RESIDUAL=150 # ≥ 1   Minimum number of read patterns to continue to attempt residual assembly per gene segment.
+MIN_RC_RESIDUAL=150 # ≥ 1   Minimum read count to continue to attempt residual assembly per gene segment.
+DO_SECONDARY=1  # 0, 1  off, on Given a successful residual assembly, create a patchwork consensus and run a secondary assembly
+
+```
+
+- output configuration file should look like:
+TBA
+
+
