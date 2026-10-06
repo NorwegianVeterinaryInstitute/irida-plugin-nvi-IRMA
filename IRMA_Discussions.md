@@ -13,10 +13,9 @@ Get about 10 smaples (woth good/ok/bad variations) from cathrine and run in comm
   - Align last deletion type DEL so we know exactly what happened. NNNN can represent so many stuffs and mislaead us
   - DEL_TYPE=DEL
     
-- MIN_CONS_SUPPORT=10 - We need to test this
-- PADDED_CONSENSUS=1
-- MIN_CONS_SUPPORT=10
-- MIN_CONS_QUALITY=10
+- MIN_CONS_SUPPORT=10 - EvFi: This is a strict minimum - We might want to adjust this - depending on the aimed sequencing coverage
+- PADDED_CONSENSUS=0 - Evfi : We do not want N padding of dropout ->  DEL_TYPE=DEL handles missing sites instead
+- MIN_CONS_QUALITY=10 - Evfi : Gven coverage is enough we can keep.
 
 # Wait until the the decision on INSERTION
 
@@ -28,10 +27,13 @@ Get about 10 smaples (woth good/ok/bad variations) from cathrine and run in comm
 
 ## Updated configs: 
 The final params/config looks like this. 
+
+> We will need 2 configs
+1. One for the default settings - which also detect eventual admixture
+2. One when admixture is detected - we will need to fetch the coverage and compute appropriate ration for the secondary assembly - unless we find a best solution to do this
  
 ``` 
 DEL_TYPE=DEL
-MIN_CONS_SUPPORT=10
 MIN_CONS_SUPPORT=10
 MIN_CONS_QUALITY=10
  
