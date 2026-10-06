@@ -53,6 +53,8 @@ MIN_CONS_SUPPORT=10 # Minimum allele coverage depth to call plurality consensus 
 MIN_CONS_QUALITY=10 # Minimum allele average quality to call plurality consensus, otherwise calls "N". Setting this value too high can negatively impact final amended consensus.
  
 GRID_ON=0 #off
+PADDED_CONSENSUS=0 # We don't want N-padding of dropout regions — We prefer it stays deletions ## IMPORTANT
+DO_SECONDARY=0 # OFF First assembly we do not do secondary assembly - BUT we do coinfection detection
 
 ### REFERENCE ###
 SKIP_E=0        # 	Skip reference elongation/extension at the 5′ and 3′ ends. Used during read gathering phase. Avoid extending at edges (usually low coverage anyway). 
