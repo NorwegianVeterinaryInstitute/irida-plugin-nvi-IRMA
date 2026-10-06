@@ -18,7 +18,7 @@ Get about 10 smaples (woth good/ok/bad variations) from cathrine and run in comm
 - MIN_CONS_QUALITY=10 - Evfi : Gven coverage is enough we can keep.
 
 # Wait until the the decision on INSERTION
-Evfi: as far as I recall we had decided NOT to use insertion - please verify your recollection
+Evfi: as far as I recall we had decided NOT to tweak indels parameters (it should allow small ones but not large sequences could be missed)  - please verify if your recollection is the same as mine
 
 #### Insertion situation - by default it wont care about insertion 
 - Are we gonna use insertion information in the sequence if its there
@@ -63,28 +63,22 @@ MIN_CONS_SUPPORT=10 # Minimum allele coverage depth to call plurality consensus 
 MIN_CONS_QUALITY=10 # Minimum allele average quality to call plurality consensus, otherwise calls "N". Setting this value too high can negatively impact final amended consensus.
 
 PADDED_CONSENSUS=0 # We don't want N-padding of dropout regions — We prefer it stays deletions ## IMPORTANT
+## So ASSEM_REF and ALIGN_AMENDED are not active - The final assembly starts from the edited backbone ref - refinement via SSW alignment - max 5 iterations. (See report new notes)
+
+### At first do not do secondary assembly BUT do admxiture testing ###
 DO_SECONDARY=0 # OFF First assembly we do not do secondary assembly - BUT we do coinfection detection
 
 # To Consider - Default is 1 - effect will be to avoid trying assembly of a segment if there are not at least 15 reads (so wont impact if quality is good - will just avoid spending time on poor samples) - Though could hide very low abundance coinfection... but if sample is that bad we remove. 
 MIN_RP=15		# minimum read pattern count to continue doing primary assembly
 MIN_RC=15		# minimum read count to continue doing primary assembly
 
-# MIN_AQ default is 2 in the reference, but the paper gives 24 for variant calls, which matches our config. 
 
-# Meta-assembly VERIFY
-ASSEM_REF=1 #
-ALIGN_AMENDED=1 #
+```
 
-
-
-
-
-### At first do not do secondary assembly BUT do admxiture testing ###
-
-``` 
  
 
 - default output configuration should read as: FLU-output.sh
+> Reverify after test that the changed parameters are the same as input. 
 ```
 ### BACKGROUND INFO ###
 # Iterative Refinement Meta-Assembler (IRMA), v1.2.0, 23 Aug 2024
