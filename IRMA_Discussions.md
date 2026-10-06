@@ -18,7 +18,7 @@ Get about 10 smaples (woth good/ok/bad variations) from cathrine and run in comm
 - MIN_CONS_QUALITY=10 - Evfi : Gven coverage is enough we can keep.
 
 # Wait until the the decision on INSERTION
-Evfi: as far as I recall we had decided NOT to tweak indels parameters (it should allow small ones but not large sequences could be missed)  - please verify if your recollection is the same as mine
+Evfi: as far as I recall we had decided NOT to tweak indels parameters (so if INS_T_DEPTH=0 - insertions are not edited to the reference)  - please verify if your recollection is the same as mine
 
 #### Insertion situation - by default it wont care about insertion 
 - Are we gonna use insertion information in the sequence if its there
@@ -68,11 +68,14 @@ PADDED_CONSENSUS=0 # We don't want N-padding of dropout regions — We prefer it
 ### At first do not do secondary assembly BUT do admxiture testing ###
 DO_SECONDARY=0 # OFF First assembly we do not do secondary assembly - BUT we do coinfection detection
 
-# To Consider - Default is 1 - effect will be to avoid trying assembly of a segment if there are not at least 15 reads (so wont impact if quality is good - will just avoid spending time on poor samples) - Though could hide very low abundance coinfection... but if sample is that bad we remove. 
+# VERIFY Default settings of your hierarchy appeared to be 1
+# Can be changed to 15 - CDC default : Effect will be to avoid trying assembly of a segment if there are not at least 15 reads
+# (so wont impact if quality is good - will just avoid spending time on poor samples)
+# Though could hide very low abundance coinfection... but if sample is that bad we remove. 
 MIN_RP=15		# minimum read pattern count to continue doing primary assembly
 MIN_RC=15		# minimum read count to continue doing primary assembly
-
-
+# Verify in output config variant-calling quality threshold 
+MIN_AQ=24 
 ```
 
  
