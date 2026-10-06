@@ -53,12 +53,24 @@ DO_SECONDARY=1  # 0, 1  off, on Given a successful residual assembly, create a p
  
  
  
-### THE COMMAND: 
+### THE COMMANDS: 
+
+#### Default command
+AIM: standard default assembly (first assembly) - assuming no coinfection (but detection of coinfection activated
+
 ```
 irma FLU Test_Data/250918_M09180.2025-04-21457-1-4_S5_R1_001.fastq Test_Data/250918_M09180.2025-04-21457-1-4_S5_R2_001.fastq output_2 --external-config userconfig/local_config.sh
 ```
+- default configuration file
+- 
 
-### FLU-output.sh
+#### Secondary assembly when co-infection detected
+- TBA
+- Specific configuration file
+
+
+### Configuration files 
+#### Default - FLU-output.sh
 ```
 ### BACKGROUND INFO ###
 # Iterative Refinement Meta-Assembler (IRMA), v1.2.0, 23 Aug 2024
