@@ -18,6 +18,7 @@ Get about 10 smaples (woth good/ok/bad variations) from cathrine and run in comm
 - MIN_CONS_QUALITY=10 - Evfi : Gven coverage is enough we can keep.
 
 # Wait until the the decision on INSERTION
+Evfi: as far as I recall we had decided NOT to use insertion - please verify your recollection
 
 #### Insertion situation - by default it wont care about insertion 
 - Are we gonna use insertion information in the sequence if its there
@@ -29,8 +30,9 @@ Get about 10 smaples (woth good/ok/bad variations) from cathrine and run in comm
 The final params/config looks like this. 
 
 > We will need 2 configs
-1. One for the default settings - which also detect eventual admixture
-2. One when admixture is detected - we will need to fetch the coverage and compute appropriate ration for the secondary assembly - unless we find a best solution to do this
+1. One for the default settings - which also detect eventual admixture but does not reconstruct the possible genome of the co-infection.
+    - We had agreed about a min coverage of 10 to indicate the presence of a sequence (by mapping to reference) - this is a strict minimum - BUT we might want to adjust depending on expected/aimed coverage that Cathrine is aiming for.  	
+2. One when admixture is detected - we will need to fetch the coverage and compute appropriate ratio for the secondary assembly (Cathrine wanted that) - unless we find a good solution to do it - it will have to wait
  
 ``` 
 DEL_TYPE=DEL
